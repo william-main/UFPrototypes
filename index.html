@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ultimate Finance Prototypes</title>
+	<link rel="stylesheet" href="css/roundslider.min.css">
+	<link rel="stylesheet" href="css/calculator.css">
+	<link rel="stylesheet" href="css/main.min.css">
+</head>
+
+<body>
+	<header>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="main-header__desktop-spacer"></div>
+				<div class="main-header u-secondary-color" data-js="main-header">
+					<div class="container">
+
+						<div class="main-header__mobile-utility hidden-md hidden-lg">
+							<a href="#" class="mobile-utility__nav-control mobile-utility__nav-control--secondary-color" data-js="mobile-nav-trigger">
+								<span></span>
+								<span></span>
+								<span></span>
+								<span></span>
+								<p class="u-sr-only">Open</p>
+							</a>
+							<a class="mobile-utility__cta btn btn--caps btn--brand-primary btn--cta-compact btn--primary hidden-lg" href="/instant-quote/">Instant quote</a>
+
+							<a class="u-plain-link" href="tel:08001217757" data-js-telNo>
+								<img class="icon icon--small icon--small--telephone u-secondary-color" src="assets/img/phone_blue.svg" />
+								<span class="u-strong rTapNumber228290 rtap-workaround">0800 121 7757</span>
+							</a>
+							<a href="/"><svg class="icon main-header__uf-logo--scrolled u-secondary-color"><use src="assets/sprites/svg-defs.svg#shape-uf-logo"></use></svg></a>
+						</div>
+						<div class="row">
+							<div class="col-xs-12 col-md-3 u-top">
+								<div class="main-header__uf-logo">
+									<a href="/">
+										<svg class="icon main-header__uf-logo--scrolled u-secondary-color"><use src="assets/sprites/svg-defs.svg#shape-uf-logo"></use></svg>
+										<img data-js="animate-gif" alt="Home" src="assets/logos/uf-main-logo.gif" />
+									</a>
+										<h1 class="u-sr-only">We’ve got the cash ready to do your business the world of good</h1>
+								</div>
+							</div>
+							<div class="">
+								<div class="main-nav">
+									<nav>
+										<ul class="">
+											<ul class="level-2">
+												<li class="main-nav__nav-item main-nav__nav-item--slide-up">
+													<a href="/our-story/">Our Story</a>
+												</li>
+												<li class="has-child main-nav__nav-item main-nav__nav-item--slide-up">
+													<a href="/our-products/">Our Products</a>    
+												</li>
+												<li class="has-child main-nav__nav-item main-nav__nav-item--slide-up">
+													<a href="/our-customers/">Our Customers</a>    
+												</li>    
+											</ul>
+										</ul>
+									</nav>
+									<div class="main-nav__nav-icons">
+											<a title="Twitter" href="https://twitter.com/UltimateFinance"> 
+												<svg class="icon icon--social icon--white"><use src="assets/sprites/svg-defs.svg#shape-twitter-logo"></use></svg>
+											</a>
+											<a href="https://www.facebook.com/UltimateFinance/" title="Facebook">
+												<svg class="icon icon--social icon--white"><use src="assets/sprites/svg-defs.svg#shape-fb-logo"></use></svg>
+											</a>
+											<a href="https://www.linkedin.com/company/ultimatefinance" title="Linkedin">
+												<svg class="icon icon--social icon--white"><use src="assets/sprites/svg-defs.svg#shape-linkedin-logo"></use></svg>
+											</a>
+											<a href=" https://www.youtube.com/channel/UCBHxwExBwtC6R_B0w-2qfoA" title="Youtube">
+												<svg class="icon icon--social icon--white"><use src="assets/sprites/svg-defs.svg#shape-yt-logo"></use></svg>
+											</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-xs-12 col-md-4 u-text-right u-float-right utility visible-md visible-lg">
+								<div class="u-text-center utility__phone-cta-holder">
+									<a class="utility__cta btn btn--caps btn--primary btn--cta-compact btn--brand-primary" href="/instant-quote/">Instant quote</a>
+									<a class="utility__phone u-caps u-plain-link" href="tel:08001217757" data-js-telNo>
+										<span class="u-strong">
+											<span class="utility__phone__number rTapNumber228290">0808 231 1276</span>
+										</span>
+										<img class="icon icon--small icon--small--telephone u-secondary-color" src="assets/img/phone_blue.svg" />
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div data-js="mob-nav-holder"></div>
+			</div>
+		</div>
+	</header>
+  
+  <!-- Insert whatever you want here -->
+	<div id="main" class="main-div page-content">
+		<div class="umb-grid">
+			<div class="grid-section">
+				<section class="site-section site-section--padding-regular">
+					<div class="calculator-container">
+						<div class="col-md-3 col-md-offset-2">
+							<div class="slider-container">
+								<div id="slider"></div>
+								<div id="slider-two"></div>
+							</div>
+							<fieldset>
+								<label for="amount" class="ul-amount-label">Amount: </label>
+								<input type="range" id="ul-amount-slider" name="ul-amount-slider" min="0" max="100000">
+								<br>
+								<label for="duration" class="ul-duration-label">Duration: </label>
+								<input type="range" id="ul-duration-slider" name="ul-duration-slider" min="0" max="12">
+							</fieldset>
+						</div>
+						<div class="col-md-2">
+							<div class="setup-bar">
+								
+							</div>
+						</div>
+						<div class="col-md-3">
+							<fieldset>
+								<label for="amount" class="ul-amount-label">Amount: </label>
+								<input type="range" id="ul-amount-slider" name="ul-amount-slider" min="0" max="100000">
+								<br>
+								<label for="duration" class="ul-duration-label">Duration: </label>
+								<input type="range" id="ul-duration-slider" name="ul-duration-slider" min="0" max="12">
+							</fieldset>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+   
+	<footer class="site-footer site-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-2">
+					<svg class="site-logo site-logo--footer icon icon--secondary-color u-margin-bottom-xl-mob"><use src="assets/sprites/svg-defs.svg#shape-uf-logo"></use></svg>
+				</div>
+				<nav class="site-footer__nav col-xs-12 col-md-4">
+					<h1 class="heading heading--heading-xs u-caps u-secondary-color u-margin-bottom-md-mob">Ultimate finance</h1>
+					<ul class="u-primary-color u-margin-bottom-lg-mob clearfix">
+								<li class="site-footer__nav__nav-item nav-item--half u-margin-bottom-sm-mob u-secondary-color"><a title="Our Story" href="/our-story/">Our Story</a></li>
+								<li class="site-footer__nav__nav-item nav-item--half u-margin-bottom-sm-mob u-secondary-color"><a title="Our Products" href="/our-products/">Our Products</a></li>
+								<li class="site-footer__nav__nav-item nav-item--half u-margin-bottom-sm-mob u-secondary-color"><a title="Our Customers" href="/our-customers/">Our Customers</a></li>
+								<li class="site-footer__nav__nav-item nav-item--half u-margin-bottom-sm-mob u-secondary-color"><a title="Business Advisors" href="/business-advisor/">Business Advisors</a></li>
+								<li class="site-footer__nav__nav-item nav-item--half u-margin-bottom-sm-mob u-secondary-color"><a title="Business Insights" href="/business-insights/">Business Insights</a></li>
+								<li class="site-footer__nav__nav-item nav-item--half u-margin-bottom-sm-mob u-secondary-color"><a title="FAQs" href="/faqs/">FAQs</a></li>
+								<li class="site-footer__nav__nav-item nav-item--half u-margin-bottom-sm-mob u-secondary-color"><a title="Legals" href="/legals/">Legals</a></li>
+								<li class="site-footer__nav__nav-item nav-item--half u-margin-bottom-sm-mob u-secondary-color"><a title="Careers" href="/careers/">Careers</a></li>
+								<li class="site-footer__nav__nav-item nav-item--half u-margin-bottom-sm-mob u-secondary-color"><a title="Contact Us" href="/contact-us/">Contact Us</a></li>
+								<li class="site-footer__nav__nav-item nav-item--half u-margin-bottom-sm-mob u-secondary-color"><a title="Client Login" href="https://ultimate.e3direct.com" target="_blank">Client Login</a></li>
+					</ul>
+				</nav>
+				<div class="col-xs-12 col-sm-6 col-md-3 site-footer__partners u-margin-bottom-lg-mob">
+					<h2 class="heading heading--heading-xs u-caps u-secondary-color u-margin-bottom-md-mob">Our Partners</h2>
+					
+				</div>
+				<div class="col-xs-12 col-md-3">
+					<div class="u-margin-bottom-xs u-margin-bottom-xs-mob">
+						<h2 class="heading heading--heading-xs u-caps u-secondary-color u-margin-bottom-md-mob">Connect with us</h2>
+							<a href="https://twitter.com/UltimateFinance" target="_blank" class="icon icon--social icon--social--twitter--blue" title="Twitter"> </a>
+							<a href="https://www.facebook.com/UltimateFinance/" target="_blank" class="icon icon--social icon--social--fb--blue" title="Facebook"> </a>
+							<a href="https://www.linkedin.com/company/ultimatefinance" target="_blank" class="icon icon--social icon--social--linkedin--blue" title="LinkedIn"> </a>
+							<a href=" https://www.youtube.com/channel/UCBHxwExBwtC6R_B0w-2qfoA" target="_blank" class="icon icon--social icon--social--yt--blue" title="YouTube"> </a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+   
+   	<script src="scripts/premin/jquery.min.js"></script>
+
+    <!--jQuery Vendor Files-->>    
+    <script src="scripts/vendor/jquery-ui.js"></script>
+    <script src="scripts/vendor/jquery.cookie.js"></script>
+    <script src="scripts/vendor/jquery.matchHeight.js"></script>
+    
+    <!--Preminified vendor files-->
+    <script src="scripts/premin/jquery.magnific-popup.min.js"></script>
+    <script src="scripts/premin/jquery.validate.min.js"></script>
+    <script src="scripts/premin/jquery.validate.additional.min.js"></script>
+    <script src="scripts/premin/jquery.validate.unobtrusive.min.js"></script>
+    <script src="scripts/premin/equalize.min.js"></script>
+    <script src="scripts/premin/slick.min.js"></script>
+    
+    <!--Custom files-->
+    <script src="scripts/vendor/js.cookie.js"></script>
+    <script src="scripts/vendor/svg4everybody.js"></script>
+    
+    <!--http://33.media.tumblr.com/1b5ec159a20aea40086a698d5549c7c8/tumblr_nae0lgwETs1tuk7ruo3_400.gif-->
+	<script src="scripts/premin/roundslider.min.js"></script>
+     
+    <!--Primary Ultimate Finance JS File-->
+    <script src="scripts/main.min.js"></script>
+</body>
+</html>
