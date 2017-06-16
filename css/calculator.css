@@ -1,5 +1,17 @@
+textarea:focus, input:focus{
+    outline: none;
+}
+
+*:focus {
+    outline: none;
+}
+
 .calculator-container {
 	overflow: auto;
+}
+
+.calculator-container input {
+	font-family: "Simplon-Light";
 }
 
 fieldset > * {
@@ -108,4 +120,43 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .rs-control .rs-bg-color {
     background-color: ;
+}
+
+div#slider-ul-amount {
+    position: absolute;
+    top: 40px;
+    left: 50px;
+}
+
+.overlay-content {
+    position: absolute;
+    width: 240px;
+    z-index: 9999;
+    height: 140px;
+    top: 65px;
+    left: 95px;
+    text-align: center;
+}
+
+.overlay-content input {
+	background: none;
+	border-bottom: 1px dashed #c8cac8;
+	text-align: center;
+}
+
+.calculator-container fieldset {
+	margin-top: 40px;
+}
+
+.text-blurb {
+	margin-top: 10px;
+}
+
+.rs-tooltip.rs-tooltip-text {
+    display: none;
+}
+
+input#overlay-ul-amount {
+    width: 150px;
+    margin: 0 auto;
 }
