@@ -91,6 +91,10 @@
 				$(this).on("input", function () {
 					var interactionValue = $(this).val();
 					
+					$root.find(site.selectors.caAmountInput).each(function () {
+						$(this).val("£" + interactionValue);
+					});
+					
 					$root.find(site.selectors.sliderTwo).each(function () {
 						$(this).roundSlider({
 							value: interactionValue
@@ -102,6 +106,10 @@
 			$root.find(site.selectors.caDurationInteractionSlider).each(function () {
 				$(this).on("input", function () {
 					var interactionValue = $(this).val();
+					
+					$root.find(site.selectors.caMonthsInput).each(function () {
+						$(this).val(interactionValue + " DAYS");
+					});
 					
 					$root.find(site.selectors.caMonthsSlider).each(function () {
 						$(this).roundSlider({
