@@ -21,7 +21,11 @@
 				'ulMonthsInput': '#overlay-ul-months',
 				'caMonthsInput': '#overlay-ca-months',
 				'caAmountInput': '#overlay-ca-amount',
-				'tooltip': '.rs-tooltip-text'
+				'tooltip': '.rs-tooltip-text',
+				'amountInteractionSlider': '#ul-amount-slider',
+				'durationInteractionSlider': '#ul-duration-slider',
+				'caAmountInteractionSlider': '#ca-amount-slider',
+				'caDurationInteractionSlider': '#ca-duration-slider'
 			};
 			
 			site.parse();
@@ -46,7 +50,6 @@
 					sliderType: "min-range",
 					circleShape: "half-top",
 					max: "100000",
-					step: "20000",
 					width: 20,
 					readOnly: true
 				});
@@ -60,6 +63,54 @@
 				}
 			});
 			
+			$root.find(site.selectors.amountInteractionSlider).each(function () {
+				$(this).on("input", function () {
+					var interactionValue = $(this).val();
+					
+					$root.find(site.selectors.slider).each(function () {
+						$(this).roundSlider({
+							value: interactionValue
+						});
+					});
+				});
+			});
+			
+			$root.find(site.selectors.durationInteractionSlider).each(function () {
+				$(this).on("input", function () {
+					var interactionValue = $(this).val();
+					
+					$root.find(site.selectors.ulMonthsSlider).each(function () {
+						$(this).roundSlider({
+							value: interactionValue
+						});
+					});
+				});
+			});
+			
+			$root.find(site.selectors.caAmountInteractionSlider).each(function () {
+				$(this).on("input", function () {
+					var interactionValue = $(this).val();
+					
+					$root.find(site.selectors.sliderTwo).each(function () {
+						$(this).roundSlider({
+							value: interactionValue
+						});
+					});
+				});
+			});
+			
+			$root.find(site.selectors.caDurationInteractionSlider).each(function () {
+				$(this).on("input", function () {
+					var interactionValue = $(this).val();
+					
+					$root.find(site.selectors.caMonthsSlider).each(function () {
+						$(this).roundSlider({
+							value: interactionValue
+						});
+					});
+				});
+			});
+			
 			$root.find(site.selectors.ulMonthsSlider).each(function () {
 				$(this).roundSlider({
 					radius: 163,
@@ -67,7 +118,6 @@
 					sliderType: "min-range",
 					circleShape: "half-top",
 					max: "360",
-					step: "30",
 					width: 10,
 					readOnly: true,
 					handleShape: "square"
@@ -89,7 +139,6 @@
 					sliderType: "min-range",
 					circleShape: "half-top",
 					max: "90",
-					step: "30",
 					width: 10,
 					readOnly: true,
 					handleShape: "square"
@@ -111,7 +160,6 @@
 					sliderType: "min-range",
 					circleShape: "half-top",
 					max: "50000",
-					step: "10000",
 					width: 20,
 					radius: 203,
 					readOnly: true
