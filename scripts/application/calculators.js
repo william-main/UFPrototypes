@@ -15,8 +15,12 @@
 			site.selectors = {
 				'slider': '#slider',
 				'sliderTwo': '#slider-two',
-				'ulAmountSlider': '#slider-ul-amount',
+				'ulMonthsSlider': '#slider-ul-months',
+				'caMonthsSlider': '#slider-ca-months',
 				'ulAmountInput': '#overlay-ul-amount',
+				'ulMonthsInput': '#overlay-ul-months',
+				'caMonthsInput': '#overlay-ca-months',
+				'caAmountInput': '#overlay-ca-amount',
 				'tooltip': '.rs-tooltip-text'
 			};
 			
@@ -51,12 +55,12 @@
 					var ulAmount = $(this).find('input').val();
 					
 					$root.find(site.selectors.ulAmountInput).each(function () {
-						$(this).val(ulAmount);
+						$(this).val("£" + ulAmount);
 					});
 				}
 			});
 			
-			$root.find(site.selectors.ulAmountSlider).each(function () {
+			$root.find(site.selectors.ulMonthsSlider).each(function () {
 				$(this).roundSlider({
 					radius: 163,
 					value: 150,
@@ -68,6 +72,36 @@
 					readOnly: true,
 					handleShape: "square"
 				});
+				
+				if ($(this).find('input').val !== "") {
+					var ulMonths = $(this).find('input').val();
+					
+					$root.find(site.selectors.ulMonthsInput).each(function () {
+						$(this).val(ulMonths + " DAYS");
+					});
+				}
+			});
+			
+			$root.find(site.selectors.caMonthsSlider).each(function () {
+				$(this).roundSlider({
+					radius: 163,
+					value: 60,
+					sliderType: "min-range",
+					circleShape: "half-top",
+					max: "90",
+					step: "30",
+					width: 10,
+					readOnly: true,
+					handleShape: "square"
+				});
+				
+				if ($(this).find('input').val !== "") {
+					var caMonths = $(this).find('input').val();
+					
+					$root.find(site.selectors.caMonthsInput).each(function () {
+						$(this).val(caMonths + " DAYS");
+					});
+				}
 			});
 			
 			$root.find(site.selectors.sliderTwo).each(function () {
@@ -82,6 +116,14 @@
 					radius: 203,
 					readOnly: true
 				});
+				
+				if ($(this).find('input').val !== "") {
+					var caAmount = $(this).find('input').val();
+					
+					$root.find(site.selectors.caAmountInput).each(function () {
+						$(this).val("£" + caAmount);
+					});
+				}
 			});
 		}
 	};

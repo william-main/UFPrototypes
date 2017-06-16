@@ -122,10 +122,16 @@ input[type=range]:focus::-ms-fill-upper {
     background-color: ;
 }
 
-div#slider-ul-amount {
+div#slider-ul-months {
     position: absolute;
     top: 40px;
     left: 50px;
+}
+
+div#slider-ca-months {
+	position: absolute;
+	top: 40px;
+	left: 50px;
 }
 
 .overlay-content {
@@ -156,7 +162,16 @@ div#slider-ul-amount {
     display: none;
 }
 
-input#overlay-ul-amount {
+input#overlay-ul-amount,
+input#overlay-ca-amount {
     width: 150px;
     margin: 0 auto;
+}
+
+input#overlay-ul-months,
+input#overlay-ca-months {
+	width: 150px;
+	margin: 0 auto;
+	line-height: 1.0;
+	margin-bottom: 5px;
 }
