@@ -13,19 +13,32 @@
 			};
 			
 			site.selectors = {
-				'slider': '#slider',
-				'sliderTwo': '#slider-two',
-				'ulMonthsSlider': '#slider-ul-months',
-				'caMonthsSlider': '#slider-ca-months',
-				'ulAmountInput': '#overlay-ul-amount',
-				'ulMonthsInput': '#overlay-ul-months',
-				'caMonthsInput': '#overlay-ca-months',
-				'caAmountInput': '#overlay-ca-amount',
-				'tooltip': '.rs-tooltip-text',
-				'amountInteractionSlider': '#ul-amount-slider',
-				'durationInteractionSlider': '#ul-duration-slider',
-				'caAmountInteractionSlider': '#ca-amount-slider',
-				'caDurationInteractionSlider': '#ca-duration-slider'
+				container: '.calculator-container',
+				ultimateLoan: {
+					'amountSlider': '#slider-ul-amount',
+					'monthsSlider': '#slider-ul-months',
+					overlay: {
+						amountInput: '#overlay-ul-amount',
+						monthsInput: '#overlay-ul-months'
+					},
+					interactions: {
+						amount: '#ul-amount-slider',
+						duration: '#ul-duration-slider'
+					}
+				},
+				cashAdvance: {
+					'amountSlider': '#slider-ca-amount',
+					'monthsSlider': '#slider-ca-months',
+					overlay: {
+						amountInput: '#overlay-ca-amount',
+						monthsInput: '#overlay-ca-months'
+					},
+					interactions: {
+						amount: '#ca-amount-slider',
+						duration: '#ca-duration-slider'
+					}
+				},
+				'tooltip': '.rs-tooltip-text'
 			};
 			
 			site.parse();
@@ -42,8 +55,8 @@
 		sliders: function () {
 			var $root = $(this);
 			
-			$root.find(site.selectors.slider).each(function () {
-				$(this).roundSlider({
+			$root.find(site.selectors.container).each(function () {
+				$(this).find(site.selectors.ultimateLoan.amountSlider).roundSlider({
 					handleShape: "square",
 					radius: 203,
 					value: 50000,
@@ -54,26 +67,26 @@
 					readOnly: true
 				});
 				
-				if ($(this).find('input').val !== "") {
-					var ulAmount = $(this).find('input').val();
+				if ($(this).find(site.selectors.ultimateLoan.amountSlider).find("input").val !== "") {
+					var ulAmount = $(this).find(site.selectors.ultimateLoan.amountSlider).find("input").val();
 					
-					$root.find(site.selectors.ulAmountInput).each(function () {
-						$(this).val("£" + ulAmount);
-					});
+					$root.find(site.selectors.ultimateLoan.overlay.amountInput).val("£" + ulAmount);
 				}
 			});
 			
-			$root.find(site.selectors.amountInteractionSlider).each(function () {
-				$(this).on("input", function () {
+			$root.find(site.selectors.container).each(function () {
+				$(this).find(site.selectors.ultimateLoan.interactions.amount).on("input", function () {
 					var interactionValue = $(this).val();
 					
-					$root.find(site.selectors.slider).each(function () {
-						$(this).roundSlider({
-							value: interactionValue
-						});
+					$root.find(site.selectors.ultimateLoan.overlay.amountInput).val("£" + interactionValue);
+					
+					$(site.selectors.ultimateLoan.amountSlider).roundSlider({
+						value: interactionValue
 					});
 				});
 			});
+			
+
 			
 			$root.find(site.selectors.durationInteractionSlider).each(function () {
 				$(this).on("input", function () {
