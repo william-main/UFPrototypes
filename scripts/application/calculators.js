@@ -14,6 +14,9 @@
 			
 			site.selectors = {
 				container: '.calculator-container',
+				currencyOverlay: '.currency-overlay',
+				sliderContainer: '.slider-container',
+				amountSlider: '.amount-slider',
 				ultimateLoan: {
 					'amountSlider': '#slider-ul-amount',
 					'monthsSlider': '#slider-ul-months',
@@ -116,7 +119,7 @@
 					if (slider.find("input").val !== "") {
 						var months = slider.find("input").val();
 						
-						overlay.val(months + " DAYS");
+						overlay.val(months);
 					}
 				}
 				
@@ -133,7 +136,6 @@
 				
 				applyMonths($(this).find(site.selectors.ultimateLoan.monthsSlider), $root.find(site.selectors.ultimateLoan.overlay.monthsInput));
 				applyDays($(this).find(site.selectors.cashAdvance.monthsSlider), $root.find(site.selectors.cashAdvance.overlay.monthsInput));
-		
 				
 				$(this).find(site.selectors.ultimateLoan.interactions.amount).on("input", function () {
 					var interactionValue = $(this).val();
@@ -172,6 +174,33 @@
 					
 					$(site.selectors.cashAdvance.monthsSlider).roundSlider({
 						value: interactionValue
+					});
+				});
+			});
+			
+			$root.find(site.selectors.currencyOverlay).each(function () {
+				$(this).on("keyup", function (event) {
+					var selection = window.getSelection().toString(),
+						$this = $(this),
+						input = $this.val().replace(/[\D\s\._\-]+/g, "");
+						
+					if (selection !== '') {
+						return;
+					}
+
+					// When the arrow keys are pressed, abort.
+					if ($.inArray(event.keyCode, [38, 40, 37, 39]) !== -1) {
+						return;
+					}
+					
+					input = input ? parseInt(input, 10) : 0;
+
+					$this.val(function () {
+						return (input === 0) ? "" : input.toLocaleString("en-US");
+					});
+					
+					$(this).closest(site.selectors.sliderContainer).find(site.selectors.amountSlider).roundSlider({
+						value: input
 					});
 				});
 			});
