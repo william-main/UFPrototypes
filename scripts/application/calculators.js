@@ -59,20 +59,22 @@
 				$(this).find(site.selectors.ultimateLoan.amountSlider).roundSlider({
 					handleShape: "square",
 					radius: 203,
-					value: 50000,
+					value: 20000,
 					sliderType: "min-range",
 					circleShape: "half-top",
 					max: "100000",
+					min: "5000",
 					width: 20,
 					readOnly: true
 				});
 				
 				$(this).find(site.selectors.ultimateLoan.monthsSlider).roundSlider({
 					radius: 163,
-					value: 150,
+					value: 3,
 					sliderType: "min-range",
 					circleShape: "half-top",
-					max: "360",
+					max: "12",
+					min: "1",
 					width: 10,
 					readOnly: true,
 					handleShape: "square"
@@ -80,10 +82,11 @@
 				
 				$(this).find(site.selectors.cashAdvance.amountSlider).roundSlider({
 					handleShape: "square",
-					value: 10000,
+					value: 20000,
 					sliderType: "min-range",
 					circleShape: "half-top",
 					max: "50000",
+					min: "10000",
 					width: 20,
 					radius: 203,
 					readOnly: true
@@ -95,6 +98,7 @@
 					sliderType: "min-range",
 					circleShape: "half-top",
 					max: "90",
+					min: "30",
 					width: 10,
 					readOnly: true,
 					handleShape: "square"
@@ -104,11 +108,11 @@
 					if (slider.find("input").val !== "") {
 						var amount = slider.find("input").val();
 						
-						overlay.val("£" + amount);
+						overlay.val(amount);
 					}
 				}
 				
-				function applyMonths(slider, overlay) {
+				function applyDays(slider, overlay) {
 					if (slider.find("input").val !== "") {
 						var months = slider.find("input").val();
 						
@@ -116,17 +120,25 @@
 					}
 				}
 				
+				function applyMonths(slider, overlay) {
+					if (slider.find("input").val !== "") {
+						var months = slider.find("input").val();
+						
+						overlay.val(months);
+					}
+				}
+				
 				applyAmounts($(this).find(site.selectors.ultimateLoan.amountSlider), $root.find(site.selectors.ultimateLoan.overlay.amountInput));
 				applyAmounts($(this).find(site.selectors.cashAdvance.amountSlider), $root.find(site.selectors.cashAdvance.overlay.amountInput));
 				
 				applyMonths($(this).find(site.selectors.ultimateLoan.monthsSlider), $root.find(site.selectors.ultimateLoan.overlay.monthsInput));
-				applyMonths($(this).find(site.selectors.cashAdvance.monthsSlider), $root.find(site.selectors.cashAdvance.overlay.monthsInput));
+				applyDays($(this).find(site.selectors.cashAdvance.monthsSlider), $root.find(site.selectors.cashAdvance.overlay.monthsInput));
 		
 				
 				$(this).find(site.selectors.ultimateLoan.interactions.amount).on("input", function () {
 					var interactionValue = $(this).val();
 					
-					$root.find(site.selectors.ultimateLoan.overlay.amountInput).val("£" + interactionValue);
+					$root.find(site.selectors.ultimateLoan.overlay.amountInput).val(interactionValue);
 					
 					$(site.selectors.ultimateLoan.amountSlider).roundSlider({
 						value: interactionValue
@@ -136,7 +148,7 @@
 				$(this).find(site.selectors.ultimateLoan.interactions.duration).on("input", function () {
 					var interactionValue = $(this).val();
 					
-					$root.find(site.selectors.ultimateLoan.overlay.monthsInput).val(interactionValue + " DAYS");
+					$root.find(site.selectors.ultimateLoan.overlay.monthsInput).val(interactionValue);
 					
 					$(site.selectors.ultimateLoan.monthsSlider).roundSlider({
 						value: interactionValue
@@ -146,7 +158,7 @@
 				$(this).find(site.selectors.cashAdvance.interactions.amount).on("input", function () {
 					var interactionValue = $(this).val();
 					
-					$root.find(site.selectors.cashAdvance.overlay.amountInput).val("£" + interactionValue);
+					$root.find(site.selectors.cashAdvance.overlay.amountInput).val(interactionValue);
 					
 					$(site.selectors.cashAdvance.amountSlider).roundSlider({
 						value: interactionValue
@@ -156,7 +168,7 @@
 				$(this).find(site.selectors.cashAdvance.interactions.duration).on("input", function () {
 					var interactionValue = $(this).val();
 					
-					$root.find(site.selectors.cashAdvance.overlay.monthsInput).val(interactionValue + " DAYS");
+					$root.find(site.selectors.cashAdvance.overlay.monthsInput).val(interactionValue);
 					
 					$(site.selectors.cashAdvance.monthsSlider).roundSlider({
 						value: interactionValue

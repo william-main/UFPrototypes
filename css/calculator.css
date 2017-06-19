@@ -146,8 +146,6 @@ div#slider-ca-months {
 
 .overlay-content input {
 	background: none;
-	border-bottom: 1px dashed #c8cac8;
-	text-align: center;
 }
 
 .calculator-container fieldset {
@@ -162,16 +160,65 @@ div#slider-ca-months {
     display: none;
 }
 
-input#overlay-ul-amount,
 input#overlay-ca-amount {
-    width: 150px;
-    margin: 0 auto;
+	display: inline-block;
+	padding: 0;
+	width: 105px;
+	text-align: center;
 }
 
-input#overlay-ul-months,
-input#overlay-ca-months {
-	width: 150px;
+input#overlay-ul-months {
+	width: 20px;
 	margin: 0 auto;
 	line-height: 1.0;
-	margin-bottom: 5px;
+	display: inline-block;
+	padding: 0;
+}
+
+input#overlay-ca-months {
+	width: 25px;
+	margin: 0 auto;
+	line-height: 1.0;
+	display: inline-block;
+	padding: 0;
+}
+
+.rs-handle.rs-move.rs-handle-square {
+    display: none;
+}
+
+.block {
+	width: 160px;
+	margin: 0 auto;
+	background: none;
+    border-bottom: 1px dashed #c8cac8;
+    text-align: center;
+	margin-top: 5px;
+}
+
+.block label {
+	display: inline-block;
+	font-family: "Simplon-Light";
+}
+
+.block label.amount-heading {
+	width: 20px;
+	text-align: right;
+}
+
+.block label.month-heading {
+	width: 75px;
+	text-align: left;
+}
+
+.block label.days-heading {
+	width: 45px;
+	text-align: left;
+}
+
+.block input#overlay-ul-amount {
+	display: inline-block;
+	padding: 0;
+	width: 105px;
+	text-align: center;
 }

@@ -105,8 +105,14 @@
 						<div class="col-md-3 col-md-offset-2">
 							<div class="slider-container">
 								<div class="overlay-content">
-									<input type="text" id="overlay-ul-months" class="body-text body-text--lg u-secondary-color" name="overlay-ul-months" value="">
-									<input type="text" id="overlay-ul-amount" class="heading heading--heading-sm u-secondary-color" name="overlay-ul-amount" value="">
+									<div class="block">
+										<input type="text" id="overlay-ul-months" class="body-text body-text--lg u-secondary-color" name="overlay-ul-months" value="">
+										<label for="overlay-ul-amount" class="month-heading body-text body-text--lg u-secondary-color">MONTHS</label>
+									</div>
+									<div class="block">
+										<label for="overlay-ul-amount" class="amount-heading heading heading--heading-sm u-secondary-color">£</label>
+										<input type="text" id="overlay-ul-amount" class="heading heading--heading-sm u-secondary-color" name="overlay-ul-amount" value="">
+									</div>
 									<div class="text-blurb">
 										<h1 class="heading heading--heading-md u-primary-color">Ultimate Loan</h1>
 										<p class="u-secondary-color body-text body-text--sm">Cash loan - installment pay back</p>
@@ -117,10 +123,10 @@
 							</div>
 							<fieldset>
 								<label for="amount" class="ul-amount-label">Amount: </label>
-								<input type="range" id="ul-amount-slider" name="ul-amount-slider" step="20000" min="0" max="100000">
+								<input type="range" id="ul-amount-slider" name="ul-amount-slider" step="1" min="5000" max="100000" value="20000">
 								<br>
 								<label for="duration" class="ul-duration-label">Duration: </label>
-								<input type="range" id="ul-duration-slider" name="ul-duration-slider" step="30" min="0" max="360">
+								<input type="range" id="ul-duration-slider" name="ul-duration-slider" step="1" min="1" max="12" value="3">
 							</fieldset>
 						</div>
 						<div class="col-md-2">
@@ -131,8 +137,14 @@
 						<div class="col-md-3">
 							<div class="slider-container">
 								<div class="overlay-content">
-									<input type="text" id="overlay-ca-months" class="body-text body-text--lg u-secondary-color" name="overlay-ca-months" value="">
-									<input type="text" id="overlay-ca-amount" class="heading heading--heading-sm u-secondary-color" name="overlay-ca-amount" value="">
+									<div class="block">
+										<input type="text" id="overlay-ca-months" class="body-text body-text--lg u-secondary-color" name="overlay-ca-months" value="">
+										<label for="overlay-ul-amount" class="days-heading body-text body-text--lg u-secondary-color">DAYS</label>
+									</div>
+									<div class="block">
+										<label for="overlay-ul-amount" class="amount-heading heading heading--heading-sm u-secondary-color">£</label>
+										<input type="text" id="overlay-ca-amount" class="heading heading--heading-sm u-secondary-color" name="overlay-ca-amount" value="">
+									</div>
 									<div class="text-blurb">
 										<h1 class="heading heading--heading-md u-primary-color">Cash Advance</h1>
 										<p class="u-secondary-color body-text body-text--sm">Short-term cash - fast</p>
@@ -143,10 +155,10 @@
 							</div>
 							<fieldset>
 								<label for="amount" class="ul-amount-label">Amount: </label>
-								<input type="range" id="ca-amount-slider" name="ca-amount-slider" step="10000" min="0" max="50000">
+								<input type="range" id="ca-amount-slider" name="ca-amount-slider" step="10000" min="10000" max="50000" value="20000">
 								<br>
 								<label for="duration" class="ul-duration-label">Duration: </label>
-								<input type="range" id="ca-duration-slider" name="ca-duration-slider" min="0" step="30" max="90">
+								<input type="range" id="ca-duration-slider" name="ca-duration-slider" min="30" step="30" max="90" value="60">
 							</fieldset>
 						</div>
 					</div>
