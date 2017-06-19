@@ -67,73 +67,7 @@
 					readOnly: true
 				});
 				
-				if ($(this).find(site.selectors.ultimateLoan.amountSlider).find("input").val !== "") {
-					var ulAmount = $(this).find(site.selectors.ultimateLoan.amountSlider).find("input").val();
-					
-					$root.find(site.selectors.ultimateLoan.overlay.amountInput).val("£" + ulAmount);
-				}
-			});
-			
-			$root.find(site.selectors.container).each(function () {
-				$(this).find(site.selectors.ultimateLoan.interactions.amount).on("input", function () {
-					var interactionValue = $(this).val();
-					
-					$root.find(site.selectors.ultimateLoan.overlay.amountInput).val("£" + interactionValue);
-					
-					$(site.selectors.ultimateLoan.amountSlider).roundSlider({
-						value: interactionValue
-					});
-				});
-			});
-			
-
-			
-			$root.find(site.selectors.durationInteractionSlider).each(function () {
-				$(this).on("input", function () {
-					var interactionValue = $(this).val();
-					
-					$root.find(site.selectors.ulMonthsSlider).each(function () {
-						$(this).roundSlider({
-							value: interactionValue
-						});
-					});
-				});
-			});
-			
-			$root.find(site.selectors.caAmountInteractionSlider).each(function () {
-				$(this).on("input", function () {
-					var interactionValue = $(this).val();
-					
-					$root.find(site.selectors.caAmountInput).each(function () {
-						$(this).val("£" + interactionValue);
-					});
-					
-					$root.find(site.selectors.sliderTwo).each(function () {
-						$(this).roundSlider({
-							value: interactionValue
-						});
-					});
-				});
-			});
-			
-			$root.find(site.selectors.caDurationInteractionSlider).each(function () {
-				$(this).on("input", function () {
-					var interactionValue = $(this).val();
-					
-					$root.find(site.selectors.caMonthsInput).each(function () {
-						$(this).val(interactionValue + " DAYS");
-					});
-					
-					$root.find(site.selectors.caMonthsSlider).each(function () {
-						$(this).roundSlider({
-							value: interactionValue
-						});
-					});
-				});
-			});
-			
-			$root.find(site.selectors.ulMonthsSlider).each(function () {
-				$(this).roundSlider({
+				$(this).find(site.selectors.ultimateLoan.monthsSlider).roundSlider({
 					radius: 163,
 					value: 150,
 					sliderType: "min-range",
@@ -144,38 +78,7 @@
 					handleShape: "square"
 				});
 				
-				if ($(this).find('input').val !== "") {
-					var ulMonths = $(this).find('input').val();
-					
-					$root.find(site.selectors.ulMonthsInput).each(function () {
-						$(this).val(ulMonths + " DAYS");
-					});
-				}
-			});
-			
-			$root.find(site.selectors.caMonthsSlider).each(function () {
-				$(this).roundSlider({
-					radius: 163,
-					value: 60,
-					sliderType: "min-range",
-					circleShape: "half-top",
-					max: "90",
-					width: 10,
-					readOnly: true,
-					handleShape: "square"
-				});
-				
-				if ($(this).find('input').val !== "") {
-					var caMonths = $(this).find('input').val();
-					
-					$root.find(site.selectors.caMonthsInput).each(function () {
-						$(this).val(caMonths + " DAYS");
-					});
-				}
-			});
-			
-			$root.find(site.selectors.sliderTwo).each(function () {
-				$(this).roundSlider({
+				$(this).find(site.selectors.cashAdvance.amountSlider).roundSlider({
 					handleShape: "square",
 					value: 10000,
 					sliderType: "min-range",
@@ -186,13 +89,80 @@
 					readOnly: true
 				});
 				
-				if ($(this).find('input').val !== "") {
-					var caAmount = $(this).find('input').val();
+				$(this).find(site.selectors.cashAdvance.monthsSlider).roundSlider({
+					radius: 163,
+					value: 60,
+					sliderType: "min-range",
+					circleShape: "half-top",
+					max: "90",
+					width: 10,
+					readOnly: true,
+					handleShape: "square"
+				});
+				
+				if ($(this).find(site.selectors.ultimateLoan.amountSlider).find("input").val !== "") {
+					var amount = $(this).find(site.selectors.ultimateLoan.amountSlider).find("input").val();
 					
-					$root.find(site.selectors.caAmountInput).each(function () {
-						$(this).val("£" + caAmount);
-					});
+					$root.find(site.selectors.ultimateLoan.overlay.amountInput).val("£" + amount);
 				}
+				
+				if ($(this).find(site.selectors.ultimateLoan.monthsSlider).find("input").val !== "") {
+					var months = $(this).find(site.selectors.ultimateLoan.monthsSlider).find("input").val();
+					
+					$root.find(site.selectors.ultimateLoan.overlay.monthsInput).val(months + " DAYS");
+				}
+				
+				if ($(this).find(site.selectors.cashAdvance.amountSlider).find("input").val !== "") {
+					var amount = $(this).find(site.selectors.cashAdvance.amountSlider).find("input").val();
+					
+					$root.find(site.selectors.cashAdvance.overlay.amountInput).val("£" + amount);
+				}
+				
+				if ($(this).find(site.selectors.cashAdvance.monthsSlider).find("input").val !== "") {
+					var months = $(this).find(site.selectors.cashAdvance.monthsSlider).find("input").val();
+					
+					$root.find(site.selectors.cashAdvance.overlay.monthsInput).val(months + " DAYS");
+				}
+				
+				$(this).find(site.selectors.ultimateLoan.interactions.amount).on("input", function () {
+					var interactionValue = $(this).val();
+					
+					$root.find(site.selectors.ultimateLoan.overlay.amountInput).val("£" + interactionValue);
+					
+					$(site.selectors.ultimateLoan.amountSlider).roundSlider({
+						value: interactionValue
+					});
+				});
+				
+				$(this).find(site.selectors.ultimateLoan.interactions.duration).on("input", function () {
+					var interactionValue = $(this).val();
+					
+					$root.find(site.selectors.ultimateLoan.overlay.monthsInput).val(interactionValue + " DAYS");
+					
+					$(site.selectors.ultimateLoan.monthsSlider).roundSlider({
+						value: interactionValue
+					});
+				});
+				
+				$(this).find(site.selectors.cashAdvance.interactions.amount).on("input", function () {
+					var interactionValue = $(this).val();
+					
+					$root.find(site.selectors.cashAdvance.overlay.amountInput).val("£" + interactionValue);
+					
+					$(site.selectors.cashAdvance.amountSlider).roundSlider({
+						value: interactionValue
+					});
+				});
+				
+				$(this).find(site.selectors.cashAdvance.interactions.duration).on("input", function () {
+					var interactionValue = $(this).val();
+					
+					$root.find(site.selectors.cashAdvance.overlay.monthsInput).val(interactionValue + " DAYS");
+					
+					$(site.selectors.cashAdvance.monthsSlider).roundSlider({
+						value: interactionValue
+					});
+				});
 			});
 		}
 	};
