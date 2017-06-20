@@ -15,8 +15,10 @@
 			site.selectors = {
 				container: '.calculator-container',
 				currencyOverlay: '.currency-overlay',
+				monthOverlay: '.month-overlay',
 				sliderContainer: '.slider-container',
 				amountSlider: '.amount-slider',
+				monthsSlider: '.months-slider',
 				ultimateLoan: {
 					'amountSlider': '#slider-ul-amount',
 					'monthsSlider': '#slider-ul-months',
@@ -87,25 +89,31 @@
 					handleShape: "square",
 					value: 20000,
 					sliderType: "min-range",
-					circleShape: "half-top",
+					circleShape: "custom-quarter",
 					max: "50000",
 					min: "10000",
 					width: 20,
 					radius: 203,
+					startAngle: 0,
 					readOnly: true
 				});
+				
+				$(this).find(site.selectors.cashAdvance.amountSlider).roundSlider("option", {"endAngle": "+140"});
 				
 				$(this).find(site.selectors.cashAdvance.monthsSlider).roundSlider({
 					radius: 163,
 					value: 60,
 					sliderType: "min-range",
-					circleShape: "half-top",
+					circleShape: "custom-quarter",
 					max: "90",
 					min: "30",
 					width: 10,
+					startAngle: 0,
 					readOnly: true,
 					handleShape: "square"
 				});
+				
+				$(this).find(site.selectors.cashAdvance.monthsSlider).roundSlider("option", {"endAngle": "+120"});
 				
 				function applyAmounts(slider, overlay) {
 					if (slider.find("input").val !== "") {
@@ -200,6 +208,29 @@
 					});
 					
 					$(this).closest(site.selectors.sliderContainer).find(site.selectors.amountSlider).roundSlider({
+						value: input
+					});
+				});
+			});
+			
+			$root.find(site.selectors.monthOverlay).each(function () {
+				$(this).on("keyup", function (event) {
+					var selection = window.getSelection().toString(),
+						$this = $(this),
+						input = $this.val();
+					
+					if (selection !== '') {
+						return;
+					}
+					
+					// When the arrow keys are pressed, abort.
+					if ($.inArray(event.keyCode, [38, 40, 37, 39]) !== -1) {
+						return;
+					}
+					
+					input = input ? parseInt(input, 10) : 0;
+					
+					$(this).closest(site.selectors.sliderContainer).find(site.selectors.monthsSlider).roundSlider({
 						value: input
 					});
 				});

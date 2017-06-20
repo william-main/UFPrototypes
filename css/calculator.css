@@ -7,7 +7,8 @@ textarea:focus, input:focus{
 }
 
 .calculator-container {
-	overflow: auto;
+	overflow: hidden;
+    position: relative;
 }
 
 .calculator-container input {
@@ -50,6 +51,33 @@ input[type=range]::-webkit-slider-thumb {
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: -5.8px;
+}
+
+.compare-bar {
+    background-color: #59bec9;
+    width: 80px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    border-radius: 25px;
+}
+
+.compare-bar p {
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+
+.compare-bar h1 {
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+	font-family: Simplon-Light;
 }
 input[type=range]:focus::-webkit-slider-runnable-track {
   background: #01426a;
@@ -118,9 +146,7 @@ input[type=range]:focus::-ms-fill-upper {
 .rs-control .rs-handle {
     background-color: #fa5a36;
 }
-.rs-control .rs-bg-color {
-    background-color: ;
-}
+
 
 div#slider-ul-months {
     position: absolute;
@@ -149,7 +175,11 @@ div#slider-ca-months {
 }
 
 .calculator-container fieldset {
-	margin-top: 40px;
+    margin-top: 40px;
+    position: absolute;
+    top: 205px;
+    z-index: 9999;
+    width: 90%;
 }
 
 .text-blurb {
@@ -222,3 +252,77 @@ input#overlay-ca-months {
 	width: 105px;
 	text-align: center;
 }
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.setup-bar .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #01426a;
+  -webkit-transition: .4s;
+  transition: .4s;
+	height: 33px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fa5a36;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.setup-bar {
+	text-align: center;
+    width: 80px;
+    margin: 0 auto;
+}
+
+.setup-bar p {
+	margin-bottom: 5px;
+	color: #01426a;
+	font-size: 14px;
+    font-weight: bold;
+}
+
+
