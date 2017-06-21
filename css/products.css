@@ -6,12 +6,17 @@
 }
 
 .product-option h1 {
-	margin-top: 8px;
+    font-size: 2.5rem !important;
+    margin-top: 12px;
 	margin-bottom: 0 !important;
 }
 
 .product-option h1.instant-quote-options {
 	color: #ff5937;
+}
+
+.product-option h1.other-product-options {
+	color: #01426a;
 }
 
 .product-option .bg-banner {
@@ -33,6 +38,10 @@
 
 .amount-section {
 	border-right: 2px solid #dfe1e0;
+}
+
+.amount-section p.body-text {
+	text-align: center;
 }
 
 .quote-cta-section {
