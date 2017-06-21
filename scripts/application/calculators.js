@@ -156,6 +156,8 @@
 							value: interactionValue
 						});
 						
+						$(site.selectors.cashAdvance.interactions.amount).val(interactionValue);
+						
 						if ($root.find(site.selectors.ultimateLoan.overlay.amountInput).val() <= 50000) {
 							$root.find(site.selectors.cashAdvance.overlay.amountInput).val(interactionValue);
 						}
