@@ -177,9 +177,25 @@
 					
 					$root.find(site.selectors.ultimateLoan.overlay.monthsInput).val(interactionValue);
 					
-					$(site.selectors.ultimateLoan.monthsSlider).roundSlider({
-						value: interactionValue
-					});
+					if ($(site.selectors.compareSwitch).hasClass("active")) {
+						$(site.selectors.ultimateLoan.monthsSlider).roundSlider({
+							value: interactionValue
+						});
+						
+						$(site.selectors.cashAdvance.interactions.duration).val(interactionValue);
+						
+						if ($root.find(site.selectors.ultimateLoan.overlay.monthsInput).val() <= 50000) {
+							$root.find(site.selectors.cashAdvance.overlay.monthsInput).val(interactionValue);
+						}
+						
+						$(site.selectors.cashAdvance.monthsSlider).roundSlider({
+							value: interactionValue
+						});
+					} else {
+						$(site.selectors.ultimateLoan.monthsSlider).roundSlider({
+							value: interactionValue
+						});
+					}
 				});
 				
 				$(this).find(site.selectors.cashAdvance.interactions.amount).on("input", function () {
