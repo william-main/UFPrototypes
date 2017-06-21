@@ -366,4 +366,15 @@ input:checked + .slider:before {
 	text-align: center;
 }
 
+.slider.round.active span {
+    color: white;
+    position: absolute;
+    top: 8px;
+    left: 33px;
+	display: block;
+}
+
+.slider.round span {
+	display: none;
+}
 
