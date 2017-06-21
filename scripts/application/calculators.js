@@ -13,6 +13,7 @@
 			};
 			
 			site.selectors = {
+				compareSwitch: '.slider',
 				container: '.calculator-container',
 				currencyOverlay: '.currency-overlay',
 				monthOverlay: '.month-overlay',
@@ -150,9 +151,23 @@
 					
 					$root.find(site.selectors.ultimateLoan.overlay.amountInput).val(interactionValue);
 					
-					$(site.selectors.ultimateLoan.amountSlider).roundSlider({
-						value: interactionValue
-					});
+					if ($(site.selectors.compareSwitch).hasClass("active")) {
+						$(site.selectors.ultimateLoan.amountSlider).roundSlider({
+							value: interactionValue
+						});
+						
+						if ($root.find(site.selectors.ultimateLoan.overlay.amountInput).val() <= 50000) {
+							$root.find(site.selectors.cashAdvance.overlay.amountInput).val(interactionValue);
+						}
+						
+						$(site.selectors.cashAdvance.amountSlider).roundSlider({
+							value: interactionValue
+						});
+					} else {
+						$(site.selectors.ultimateLoan.amountSlider).roundSlider({
+							value: interactionValue
+						});
+					}
 				});
 				
 				$(this).find(site.selectors.ultimateLoan.interactions.duration).on("input", function () {
@@ -233,6 +248,12 @@
 					$(this).closest(site.selectors.sliderContainer).find(site.selectors.monthsSlider).roundSlider({
 						value: input
 					});
+				});
+			});
+			
+			$root.find(site.selectors.compareSwitch).each(function () {
+				$(this).on("click", function () {
+					$(this).toggleClass("active");
 				});
 			});
 		}

@@ -179,7 +179,7 @@ div#slider-ca-months {
     position: absolute;
     top: 205px;
     z-index: 9999;
-    width: 90%;
+    width: 100%;
 }
 
 .text-blurb {

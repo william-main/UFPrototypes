@@ -1,0 +1,55 @@
+.product-option {
+	overflow: auto;
+	background-color: #fff;
+	border-bottom: 2px solid #b6b8b5;
+	padding-right: 0 !important;
+}
+
+.product-option h1 {
+	margin-top: 8px;
+	margin-bottom: 0 !important;
+}
+
+.product-option h1.instant-quote-options {
+	color: #ff5937;
+}
+
+.product-option .bg-banner {
+    min-height: 45px;
+    background-color: #dfe1de;
+}
+
+.product-option p.body-text {
+    margin-top: 15px;
+	color: #01426a;
+	font-weight: bold;
+}
+
+.col-md-10.col-md-offset-1.spacer {
+    min-height: 25px;
+    border-top: 5px solid #012e4b;
+	padding: 0;
+}
+
+.amount-section {
+	border-right: 2px solid #dfe1e0;
+}
+
+.quote-cta-section {
+	background-color: #fff;
+}
+
+.col-md-2.quote-cta-section {
+    min-height: 52px;
+	position: relative;
+}
+
+.col-md-2.quote-cta-section.last {
+	border-bottom: 2px solid #b6b8b5;
+}
+
+.quote-cta-section a.instant-quote-cta {
+	position: absolute;
+	top: 30px;
+	z-index: 9999;
+}
