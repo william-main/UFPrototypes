@@ -325,4 +325,45 @@ input:checked + .slider:before {
     font-weight: bold;
 }
 
+.finance-information {
+	border-top: 2px solid #b6b8b6;
+    padding-top: 20px;
+    z-index: 9999;
+    position: relative;
+}
+
+.finance-information ul {
+	display: inline-block;
+	margin: 5px;
+}
+
+.finance-information ul li {
+	text-align: center;
+}
+
+.finance-information ul li p {
+	font-size: 14px;
+    width: 90px;
+	font-weight: bold;
+	color: #01426a;
+}
+
+.finance-information ul li h1 {
+	color: #01426a;
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.slider-container {
+    height: 385px;
+}
+
+.quote-cta {
+	position: relative;
+	z-index: 9999;
+	margin-top: 20px;
+	text-align: center;
+}
+
 

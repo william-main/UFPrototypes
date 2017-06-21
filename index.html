@@ -102,74 +102,148 @@
 			<div class="grid-section">
 				<section class="site-section site-section--padding-regular">
 					<div class="calculator-container">
-						<div class="col-md-3 col-md-offset-2">
-							<div class="slider-container">
-								<div class="overlay-content">
-									<div class="block">
-										<input type="text" id="overlay-ul-months" class="month-overlay body-text body-text--lg u-secondary-color" name="overlay-ul-months" value="">
-										<label for="overlay-ul-amount" class="month-heading body-text body-text--lg u-secondary-color">MONTHS</label>
+						<div class="row">
+							<div class="col-md-3 col-md-offset-2">
+								<div class="slider-container">
+									<div class="overlay-content">
+										<div class="block">
+											<input type="text" id="overlay-ul-months" class="month-overlay body-text body-text--lg u-secondary-color" name="overlay-ul-months" value="">
+											<label for="overlay-ul-amount" class="month-heading body-text body-text--lg u-secondary-color">MONTHS</label>
+										</div>
+										<div class="block">
+											<label for="overlay-ul-amount" class="amount-heading heading heading--heading-sm u-secondary-color">£</label>
+											<input type="text" id="overlay-ul-amount" class="currency-overlay heading heading--heading-sm u-secondary-color" name="overlay-ul-amount" value="">
+										</div>
+										<div class="text-blurb">
+											<h1 class="heading heading--heading-md u-primary-color">Ultimate Loan</h1>
+											<p class="u-secondary-color body-text body-text--sm">Cash loan - installment pay back</p>
+										</div>
 									</div>
-									<div class="block">
-										<label for="overlay-ul-amount" class="amount-heading heading heading--heading-sm u-secondary-color">£</label>
-										<input type="text" id="overlay-ul-amount" class="currency-overlay heading heading--heading-sm u-secondary-color" name="overlay-ul-amount" value="">
-									</div>
-									<div class="text-blurb">
-										<h1 class="heading heading--heading-md u-primary-color">Ultimate Loan</h1>
-										<p class="u-secondary-color body-text body-text--sm">Cash loan - installment pay back</p>
-									</div>
+									<div id="slider-ul-amount" class="amount-slider"></div>
+									<div id="slider-ul-months" class="months-slider"></div>
 								</div>
-								<div id="slider-ul-amount" class="amount-slider"></div>
-								<div id="slider-ul-months" class="months-slider"></div>
+								<fieldset>
+									<label for="amount" class="ul-amount-label">Amount: </label>
+									<input type="range" id="ul-amount-slider" name="ul-amount-slider" step="1" min="5000" max="100000" value="20000">
+									<br>
+									<label for="duration" class="ul-duration-label">Duration: </label>
+									<input type="range" id="ul-duration-slider" name="ul-duration-slider" step="1" min="1" max="12" value="3">
+								</fieldset>
 							</div>
-							<fieldset>
-								<label for="amount" class="ul-amount-label">Amount: </label>
-								<input type="range" id="ul-amount-slider" name="ul-amount-slider" step="1" min="5000" max="100000" value="20000">
-								<br>
-								<label for="duration" class="ul-duration-label">Duration: </label>
-								<input type="range" id="ul-duration-slider" name="ul-duration-slider" step="1" min="1" max="12" value="3">
-							</fieldset>
-						</div>
-						<div class="col-md-2">
-							<div class="compare-bar">
-								<p>EARLY SETTLEMENT FEE</p>
-								<h1>£0</h1>
-								<p>SETUP COST</p>
-								<h1>£0</h1>
-							</div>
-							<div class="setup-bar">
-								<p>COMPARE PRODUCTS</p>
-								<label class="switch">
-								  <input type="checkbox">
-								  <div class="slider round"></div>
-								</label>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="slider-container">
-								<div class="overlay-content">
-									<div class="block">
-										<input type="text" id="overlay-ca-months" class="month-overlay body-text body-text--lg u-secondary-color" name="overlay-ca-months" value="">
-										<label for="overlay-ul-amount" class="days-heading body-text body-text--lg u-secondary-color">DAYS</label>
-									</div>
-									<div class="block">
-										<label for="overlay-ul-amount" class="amount-heading heading heading--heading-sm u-secondary-color">£</label>
-										<input type="text" id="overlay-ca-amount" class="currency-overlay heading heading--heading-sm u-secondary-color" name="overlay-ca-amount" value="">
-									</div>
-									<div class="text-blurb">
-										<h1 class="heading heading--heading-md u-primary-color">Cash Advance</h1>
-										<p class="u-secondary-color body-text body-text--sm">Short-term cash - fast</p>
-									</div>
+							<div class="col-md-2">
+								<div class="compare-bar">
+									<p>EARLY SETTLEMENT FEE</p>
+									<h1>£0</h1>
+									<p>SETUP COST</p>
+									<h1>£0</h1>
 								</div>
-								<div id="slider-ca-amount" class="amount-slider"></div>
-								<div id="slider-ca-months" class="months-slider"></div>
+								<div class="setup-bar">
+									<p>COMPARE PRODUCTS</p>
+									<label class="switch">
+									  <input type="checkbox">
+									  <div class="slider round"></div>
+									</label>
+								</div>
 							</div>
-							<fieldset>
-								<label for="amount" class="ul-amount-label">Amount: </label>
-								<input type="range" id="ca-amount-slider" name="ca-amount-slider" step="10000" min="10000" max="50000" value="20000">
-								<br>
-								<label for="duration" class="ul-duration-label">Duration: </label>
-								<input type="range" id="ca-duration-slider" name="ca-duration-slider" min="30" step="30" max="90" value="60">
-							</fieldset>
+							<div class="col-md-3">
+								<div class="slider-container">
+									<div class="overlay-content">
+										<div class="block">
+											<input type="text" id="overlay-ca-months" class="month-overlay body-text body-text--lg u-secondary-color" name="overlay-ca-months" value="">
+											<label for="overlay-ul-amount" class="days-heading body-text body-text--lg u-secondary-color">DAYS</label>
+										</div>
+										<div class="block">
+											<label for="overlay-ul-amount" class="amount-heading heading heading--heading-sm u-secondary-color">£</label>
+											<input type="text" id="overlay-ca-amount" class="currency-overlay heading heading--heading-sm u-secondary-color" name="overlay-ca-amount" value="">
+										</div>
+										<div class="text-blurb">
+											<h1 class="heading heading--heading-md u-primary-color">Cash Advance</h1>
+											<p class="u-secondary-color body-text body-text--sm">Short-term cash - fast</p>
+										</div>
+									</div>
+									<div id="slider-ca-amount" class="amount-slider"></div>
+									<div id="slider-ca-months" class="months-slider"></div>
+								</div>
+								<fieldset>
+									<label for="amount" class="ul-amount-label">Amount: </label>
+									<input type="range" id="ca-amount-slider" name="ca-amount-slider" step="10000" min="10000" max="50000" value="20000">
+									<br>
+									<label for="duration" class="ul-duration-label">Duration: </label>
+									<input type="range" id="ca-duration-slider" name="ca-duration-slider" min="30" step="30" max="90" value="60">
+								</fieldset>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3 col-md-offset-2">
+								<div class="finance-information">
+									<ul>
+										<li>
+											<p>MONTHLY RATE</p>
+											<h1>1.5%</h1>
+										</li>
+									</ul>
+									<ul>
+										<li>
+											<p>TOTAL INTEREST</p>
+											<h1>£1,800</h1>
+										</li>
+									</ul>
+									<ul>
+										<li>
+											<p>3 MONTHLY PAYMENTS OF</p>
+											<h1>£13,933.33</h1>
+										</li>
+									</ul>
+									<ul>
+										<li>
+											<p>TOTAL TO REPAY</p>
+											<h1>£41,800</h1>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-2"></div>
+							<div class="col-md-3">
+								<div class="finance-information">
+									<ul>
+										<li>
+											<p>90-DAY RATE</p>
+											<h1>4.5%</h1>
+										</li>
+									</ul>
+									<ul>
+										<li>
+											<p>TOTAL INTEREST</p>
+											<h1>£1,800</h1>
+										</li>
+									</ul>
+									<ul>
+										<li>
+											<p>MONTHLY PAYMENTS OF</p>
+											<h1>£0</h1>
+										</li>
+									</ul>
+									<ul>
+										<li>
+											<p>ONE REPAYMENT OF</p>
+											<h1>£41,800</h1>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3 col-md-offset-2">
+								<div class="quote-cta">
+									<a class="btn btn--brand-primary btn--caps btn--btn-md btn--min-width instant-quote-cta btn--product-cta" title="INSTANT QUOTE" href="/our-products/business-loans/cash-advance#quote">INSTANT QUOTE</a>
+								</div>
+
+							</div>
+							<div class="col-md-3 col-md-offset-2">
+								<div class="quote-cta">
+									<a class="btn btn--brand-primary btn--caps btn--btn-md btn--min-width instant-quote-cta btn--product-cta" title="INSTANT QUOTE" href="/our-products/business-loans/cash-advance#quote">INSTANT QUOTE</a>
+								</div>
+							</div>
 						</div>
 					</div>
 				</section>
