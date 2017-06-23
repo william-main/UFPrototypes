@@ -1,3 +1,7 @@
+.site-section.site-section-product-page {
+    padding-top: 25px !important;
+}
+
 .container .table tbody {
 	background-color: #fff;
 }
@@ -41,10 +45,12 @@
     font-weight: bold;
     font-size: 1.8rem;
     margin-bottom: 10px;
+	margin-left: 20px;
 }
 
 .container .table th.amount-header p {
 	text-align: center;
+	margin-left: 0;
 }
 
 .container .table td.details-section p.body-text {
@@ -52,7 +58,7 @@
 }
 
 .container .table td.spacer {
-    height: 50px;
+    height: 30px;
     padding: 0;
     background-color: #01426a;
     border-right: 0;
@@ -71,6 +77,26 @@
 
 .container .table tr.last td {
     border-bottom: 0;
+}
+
+.container .table tr td {
+	transition: all 0.1s;
+}
+
+.container .table tr:hover td.product-section,
+.container .table tr:hover td.details-section,
+.container .table tr:hover td.amount-section {
+	background-color: #59beca;
+	border-right: 2px solid #59beca;
+	cursor: pointer;
+}
+
+.container .table tr:hover td h1 {
+	color: #fff;
+}
+
+.container .table tr:hover td p.body-text {
+    color: #fff;
 }
 
 @media(max-width: 768px) {
