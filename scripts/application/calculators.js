@@ -185,8 +185,7 @@
 						// This is a horrendously bad idea and needs refactored,
 						// but basically this accounts for the fact that the left side is in months,
 						// and the right side is in days. Applying a multiplier of 30 to the month count corrects
-						// the day count on the right side. 
-						// Yes, really.
+						// the day count on the right side....
 						$(site.selectors.cashAdvance.interactions.duration).val(interactionValue * 30);
 						
 						if ($root.find(site.selectors.ultimateLoan.overlay.monthsInput).val() * 30 <= 90) {
