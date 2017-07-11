@@ -57,6 +57,7 @@ input[type=range]::-webkit-slider-thumb {
     background-color: #59bec9;
     width: 80px;
     margin: 0 auto;
+	margin-left: 100px;
     margin-bottom: 40px;
     border-radius: 25px;
 }
@@ -163,7 +164,7 @@ div#slider-ca-months {
 .overlay-content {
     position: absolute;
     width: 240px;
-    z-index: 9999;
+    z-index: 998;
     height: 140px;
     top: 65px;
     left: 95px;
@@ -175,11 +176,11 @@ div#slider-ca-months {
 }
 
 .calculator-container fieldset {
-    margin-top: 40px;
+    padding-top: 55px;
     position: absolute;
     top: 205px;
-    z-index: 9999;
-    width: 100%;
+    z-index: 998;
+    width: 410px;
 }
 
 .text-blurb {
@@ -316,6 +317,7 @@ input:checked + .slider:before {
 	text-align: center;
     width: 80px;
     margin: 0 auto;
+	margin-left: 100px;
 }
 
 .setup-bar p {
@@ -328,8 +330,9 @@ input:checked + .slider:before {
 .finance-information {
 	border-top: 2px solid #b6b8b6;
     padding-top: 20px;
-    z-index: 9999;
+    z-index: 998;
     position: relative;
+	width: 410px;
 }
 
 .finance-information ul {
@@ -357,13 +360,15 @@ input:checked + .slider:before {
 
 .slider-container {
     height: 385px;
+	width: 410px;
 }
 
 .quote-cta {
 	position: relative;
-	z-index: 9999;
+	z-index: 998;
 	margin-top: 20px;
 	text-align: center;
+	width: 410px;
 }
 
 .slider.round.active span {
@@ -376,5 +381,9 @@ input:checked + .slider:before {
 
 .slider.round span {
 	display: none;
+}
+
+section.site-section.site-section--padding-xxs.calulator-section {
+    border-top: 2px solid #01426a;
 }
 

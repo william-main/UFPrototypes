@@ -5,3 +5,89 @@
 .box-input input#businessName {
 	width: 100%;
 }
+
+.table th p {
+	text-align: left;
+}
+
+.table span {
+	float: left;
+	padding-right: 20px;
+}
+
+.table .quote-section {
+    background-color: #dfe1df;
+}
+
+.table thead {
+	border-top: 2px solid #b6b8b5;
+}
+
+.table tbody {
+	border-bottom: 2px solid #b6b8b5;
+}
+
+.table td.quote-section p.body-text {
+    font-size: 1.8rem;
+    margin-left: 20px;
+	color: #01426a;
+	font-weight: bold;
+}
+
+.table thead th p {
+    text-align: center;
+    font-size: 1.3rem;
+    color: #01426a;
+	font-weight: bold;
+	padding-top: 20px;
+    padding-bottom: 25px;
+}
+
+.table tbody td.compare-section p.body-text {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #fa5a36;
+	margin-left: 20px;
+}
+
+.table td p.body-text {
+	font-size: 1.8rem;
+    margin-left: 14px;
+	color: #01426a;
+	font-weight: bold;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.table tr.last td {
+    padding-bottom: 10px;
+}
+
+.request-quote p {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #01426a;
+}
+
+.request-quote h1 {
+    font-size: 1.8rem;
+    font-family: Simplon-Light;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.request-quote h1 span {
+    color: #fa5a36;
+    padding-left: 20px;
+}
+
+.quote-cta-section {
+    margin-top: 25px;
+    text-align: right;
+}
+
+.quote-cta-section a {
+	margin-left: 20px;
+}
+

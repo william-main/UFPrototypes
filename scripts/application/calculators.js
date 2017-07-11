@@ -207,9 +207,25 @@
 					
 					$root.find(site.selectors.cashAdvance.overlay.amountInput).val(interactionValue);
 					
-					$(site.selectors.cashAdvance.amountSlider).roundSlider({
-						value: interactionValue
-					});
+					if ($(site.selectors.compareSwitch).hasClass("active")) {
+						$(site.selectors.cashAdvance.amountSlider).roundSlider({
+							value: interactionValue
+						});
+						
+						$(site.selectors.cashAdvance.interactions.amount).val(interactionValue);
+						
+						if ($root.find(site.selectors.cashAdvance.overlay.amountInput).val() <= 50000) {
+							$root.find(site.selectors.ultimateLoan.overlay.amountInput).val(interactionValue);
+						}
+						
+						$(site.selectors.ultimateLoan.amountSlider).roundSlider({
+							value: interactionValue
+						});
+					} else {
+						$(site.selectors.cashAdvance.amountSlider).roundSlider({
+							value: interactionValue
+						});
+					}
 				});
 				
 				$(this).find(site.selectors.cashAdvance.interactions.duration).on("input", function () {
@@ -217,9 +233,29 @@
 					
 					$root.find(site.selectors.cashAdvance.overlay.monthsInput).val(interactionValue);
 					
-					$(site.selectors.cashAdvance.monthsSlider).roundSlider({
-						value: interactionValue
-					});
+					if ($(site.selectors.compareSwitch).hasClass("active")) {
+						$(site.selectors.cashAdvance.monthsSlider).roundSlider({
+							value: interactionValue
+						});
+						
+						// This is a horrendously bad idea and needs refactored,
+						// but basically this accounts for the fact that the left side is in months,
+						// and the right side is in days. Applying a multiplier of 30 to the month count corrects
+						// the day count on the right side....
+						$(site.selectors.ultimateLoan.interactions.duration).val(interactionValue / 30);
+						
+						if ($root.find(site.selectors.cashAdvance.overlay.monthsInput).val() / 30 <= 12) {
+							$root.find(site.selectors.ultimateLoan.overlay.monthsInput).val(interactionValue / 30);
+						}
+						
+						$(site.selectors.ultimateLoan.monthsSlider).roundSlider({
+							value: interactionValue / 30
+						});
+					} else {
+						$(site.selectors.cashAdvance.monthsSlider).roundSlider({
+							value: interactionValue
+						});
+					}
 				});
 			});
 			
