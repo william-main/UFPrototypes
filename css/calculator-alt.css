@@ -151,14 +151,18 @@ input[type=range]:focus::-ms-fill-upper {
 
 div#slider-ul-months {
     position: absolute;
-    top: 40px;
-    left: 50px;
+    top: 30px;
+    left: 0;
 }
 
 div#slider-ca-months {
-	position: absolute;
-	top: 40px;
-	left: 50px;
+    position: absolute;
+    top: 0px;
+    left: 40px;
+}
+
+.slider-container.uf-loan-slider {
+    margin-left: -42px;
 }
 
 .overlay-content {
@@ -175,13 +179,7 @@ div#slider-ca-months {
 	background: none;
 }
 
-.calculator-container fieldset {
-    padding-top: 55px;
-    position: absolute;
-    top: 205px;
-    z-index: 998;
-    width: 410px;
-}
+
 
 .text-blurb {
 	margin-top: 10px;
@@ -356,15 +354,6 @@ input:checked + .slider:before {
 	font-size: 20px;
 	font-weight: bold;
 	margin-top: 10px;
-}
-
-.slider-container {
-    height: 385px;
-	width: 410px;
-}
-
-.slider-container.ca-advance-slider {
-	margin-left: 47px;
 }
 
 .quote-cta {

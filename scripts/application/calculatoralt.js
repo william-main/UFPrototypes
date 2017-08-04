@@ -66,7 +66,7 @@
 			$root.find(site.selectors.container).each(function () {
 				$(this).find(site.selectors.ultimateLoan.amountSlider).roundSlider({
 					handleShape: "square",
-					radius: 203,
+					radius: 133,
 					value: 5000,
 					sliderType: "min-range",
 					circleShape: "half-top",
@@ -77,7 +77,7 @@
 				});
 				
 				$(this).find(site.selectors.ultimateLoan.monthsSlider).roundSlider({
-					radius: 163,
+					radius: 103,
 					value: 1,
 					sliderType: "min-range",
 					circleShape: "half-top",
@@ -92,11 +92,11 @@
 					handleShape: "square",
 					value: 5000,
 					sliderType: "min-range",
-					circleShape: "custom-quarter",
+					circleShape: "half-bottom",
 					max: "50000",
 					min: "0",
 					width: 20,
-					radius: 203,
+					radius: 133,
 					startAngle: 0,
 					readOnly: true
 				});
@@ -104,10 +104,10 @@
 				$(this).find(site.selectors.cashAdvance.amountSlider).roundSlider("option", {"endAngle": "+140"});
 				
 				$(this).find(site.selectors.cashAdvance.monthsSlider).roundSlider({
-					radius: 163,
+					radius: 103,
 					value: 30,
 					sliderType: "min-range",
-					circleShape: "custom-quarter",
+					circleShape: "half-bottom",
 					max: "90",
 					min: "0",
 					width: 10,

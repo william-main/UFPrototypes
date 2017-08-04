@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Ultimate Finance Prototypes</title>
 	<link rel="stylesheet" href="css/roundslider.min.css">
-	<link rel="stylesheet" href="css/results.css">
+	<link rel="stylesheet" href="css/calculator-alt.css">
 	<link rel="stylesheet" href="css/main.min.css">
 </head>
 
@@ -100,95 +100,63 @@
 	<div id="main" class="main-div page-content">
 		<div class="umb-grid">
 			<div class="grid-section">
-				<section class="site-section site-section--padding-small">
-					<div class="container">
+				<section class="site-section site-section--padding-xxs calulator-section">
+					<div class="calculator-container">
 						<div class="row">
-							<div class="col-md-4 col-md-offset-5">
-								<h1 class="heading heading--heading-md u-primary-color">Ultimate Loan</h1>
-								<p class="u-secondary-color">Cash loan - installment pay back</p>
+							<div class="col-md-2 col-md-offset-5">
+								<div class="slider-container uf-loan-slider">
+									<div class="overlay-content">
+										<div class="block">
+											<input type="text" id="overlay-ul-months" class="month-overlay body-text body-text--lg u-secondary-color" name="overlay-ul-months" value="">
+											<label for="overlay-ul-amount" class="month-heading body-text body-text--lg u-secondary-color">MONTHS</label>
+										</div>
+										<div class="block">
+											<label for="overlay-ul-amount" class="amount-heading heading heading--heading-sm u-secondary-color">£</label>
+											<input type="text" id="overlay-ul-amount" class="currency-overlay heading heading--heading-sm u-secondary-color" name="overlay-ul-amount" value="">
+										</div>
+										<div class="text-blurb">
+											<h1 class="heading heading--heading-md u-primary-color">Ultimate Loan</h1>
+											<p class="u-secondary-color body-text body-text--sm">Cash loan - installment pay back</p>
+										</div>
+									</div>
+									<div id="slider-ul-amount" class="amount-slider"></div>
+									<div id="slider-ul-months" class="months-slider"></div>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="container">
-						<section class="col-xs-12 col-sm-6 col-md-5 u-bg-white-color site-section site-section--padding-regular">
-							<div class="container">
-								<div class="row">
-									<div class="col-md-12 col-md-offset-1">
-										<form action="" data-animation="fade-in-up" data-js="scroll-animation" data-js-combined-quote-form data-js-validated-form enctype="multipart/form-data" id="form" method="post" novalidate="novalidate" data-animation-activated="true">
-											<div class="form-wrapper">
-												<div class="form-row">
-													<label class="u-secondary-color block-label" for="emailAddress">Email address</label>
-													<div class="box-input">
-														<input autocomplete="off" class="input--ful-width emailAddress input input--bordered" id="emailAddress" placeholder="Enter email address" required type="text" value aria-required="true">
-													</div>
-												</div>
-												<div class="form-row">
-													<label class="u-secondary-color block-label" for="businessName">Business Name</label>
-													<div class="box-input">
-														<input autocomplete="off" class="input--ful-width emailAddress input input--bordered" id="businessName" placeholder="Enter business name or company number" required type="text" value aria-required="true">
-													</div>
-												</div>
-												<div class="form-row">
-													<div class="request-quote">
-														<p>YOUR LOAN REQUEST</p>
-														<h1 class="amount">AMOUNT: <span>£40,000</span></h1>
-														<h1 class="duration">DURATION: <span>3 MONTHS</span></h1>
-													</div>
-												</div>
-											</div>
-										</form>
+						<div class="row">
+							<div class="col-md-4">
+								<fieldset>
+									<label for="amount" class="ul-amount-label">Amount: </label>
+									<input type="range" id="ul-amount-slider" name="ul-amount-slider" step="1000" min="5000" max="100000" value="5000">
+									<br>
+									<label for="duration" class="ul-duration-label">Duration: </label>
+									<input type="range" id="ul-duration-slider" name="ul-duration-slider" step="1" min="1" max="12" value="1">
+								</fieldset>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-2 col-md-offset-3">
+								<div class="slider-container ca-advance-slider">
+									<div class="overlay-content">
+										<div class="block">
+											<input type="text" id="overlay-ca-months" class="month-overlay body-text body-text--lg u-secondary-color" name="overlay-ca-months" value="">
+											<label for="overlay-ul-amount" class="days-heading body-text body-text--lg u-secondary-color">DAYS</label>
+										</div>
+										<div class="block">
+											<label for="overlay-ul-amount" class="amount-heading heading heading--heading-sm u-secondary-color">£</label>
+											<input type="text" id="overlay-ca-amount" class="currency-overlay heading heading--heading-sm u-secondary-color" name="overlay-ca-amount" value="">
+										</div>
+										<div class="text-blurb">
+											<h1 class="heading heading--heading-md u-primary-color">Cash Advance</h1>
+											<p class="u-secondary-color body-text body-text--sm">Short-term cash - fast</p>
+										</div>
 									</div>
+									<div id="slider-ca-amount" class="amount-slider"></div>
+									<div id="slider-ca-months" class="months-slider"></div>
 								</div>
 							</div>
-						</section>
-						<section class="col-md-7 site-section site-section--padding-regular">
-							<div class="container">
-								<div class="row">
-									<table class="col col-md-12 table">
-									  <thead>
-										<tr>
-										  <th></th>
-										  <th class="quote-section"><p>APPROVED QUOTE</p></th>
-										  <th></th>
-										  <th class="original-quote"><p>ORIGINAL QUOTE</p></th>
-										</tr>
-									  </thead>
-									  <tbody>
-										<tr>
-										  <td class="details-section"><p class="body-text">Monthly Rate*:</p></td>
-										  <td class="quote-section"><p class="body-text interest-rate"><span>1.8</span>%</p></td>
-										  <td class="compare-section"><p class="body-text interest-rate">+<span>0.3</span>%</p></td>
-										  <td class="original-quote"><p class="body-text interest-rate"><span>1.5</span>%</p></td>
-										</tr>
-										<tr>  
-										  <td class="details-section"><p class="body-text">Total Interest:</p></td>
-										  <td class="quote-section"><p class="body-text total-interest">£<span>2257.20</span></p></td>
-										  <td class="compare-section"><p class="body-text total-interest">+£<span>457.20</span></p></td>
-										  <td class="original-quote"><p class="body-text total-interest">£<span>1,800</span></p></td>
-										</tr>
-										<tr>
-										  <td class="details-section"><p class="body-text">Monthly payments of:</p></td>
-										  <td class="quote-section"><p class="body-text monthly-payments">£<span>14085.73</span></p></td>
-										  <td class="compare-section"><p class="body-text monthly-payments">+£<span>152.40</span></p></td>
-										  <td class="original-quote"><p class="body-text monthly-payments">£<span>13933.33</span></p></td>
-										</tr>
-										<tr class="last">
-										  <td class="details-section"><p class="body-text">Total to reply:</p></td>
-										  <td class="quote-section"><p class="body-text total-repayment">£<span>5k - £1m</span></p></td>
-										  <td class="compare-section"><p class="body-text total-repayment">+£<span>457.20</span></p></td>
-										  <td class="original-quote"><p class="body-text total-repayment">£<span>41800</span></p></td>
-										</tr>
-									  </tbody>
-									</table>	
-								</div>
-								<div class="row">
-									<div class="quote-cta-section">
-										<a class="btn btn--brand-secondary btn--caps btn--btn-md btn--min-width btn--product-cta" title="REQUEST A QUOTE" href="index.html">BACK</a>
-										<a class="btn btn--brand-primary btn--caps btn--btn-md btn--min-width btn--product-cta" title="REQUEST A QUOTE" href="/our-products/business-loans/cash-advance#quote">APPLY WITH THIS QUOTE</a>
-									</div>
-								</div>
-							</div>
-						</section>
+						</div>	
 					</div>
 				</section>
 			</div>
@@ -237,7 +205,7 @@
    
    	<script src="scripts/premin/jquery.min.js"></script>
 
-    <!--jQuery Vendor Files-->
+    <!--jQuery Vendor Files-->>    
     <script src="scripts/vendor/jquery-ui.js"></script>
     <script src="scripts/vendor/jquery.cookie.js"></script>
     <script src="scripts/vendor/jquery.matchHeight.js"></script>
@@ -255,7 +223,8 @@
     <script src="scripts/vendor/svg4everybody.js"></script>
     
     <!--http://33.media.tumblr.com/1b5ec159a20aea40086a698d5549c7c8/tumblr_nae0lgwETs1tuk7ruo3_400.gif-->
-    <script src="scripts/application/results.js"></script>
+    <script src="scripts/premin/roundslider.min.js"></script>
+    <script src="scripts/application/calculatoralt.js"></script>
      
     <!--Primary Ultimate Finance JS File-->
     <script src="scripts/main.min.js"></script>

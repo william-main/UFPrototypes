@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="">
 <head>
 	<meta charset="utf-8">
@@ -124,10 +124,10 @@
 								</div>
 								<fieldset>
 									<label for="amount" class="ul-amount-label">Amount: </label>
-									<input type="range" id="ul-amount-slider" name="ul-amount-slider" step="1000" min="5000" max="100000" value="20000">
+									<input type="range" id="ul-amount-slider" name="ul-amount-slider" step="1000" min="5000" max="100000" value="5000">
 									<br>
 									<label for="duration" class="ul-duration-label">Duration: </label>
-									<input type="range" id="ul-duration-slider" name="ul-duration-slider" step="1" min="1" max="12" value="3">
+									<input type="range" id="ul-duration-slider" name="ul-duration-slider" step="1" min="1" max="12" value="1">
 								</fieldset>
 							</div>
 							<div class="col-md-2">
@@ -142,7 +142,8 @@
 									<label class="switch">
 									  <input type="checkbox">
 									  	<div class="slider round active">
-											<span>ON</span>
+                                            <span id="off-text">OFF</span>
+											<span id="on-text">ON</span>
 										</div>
 									</label>
 								</div>
@@ -168,10 +169,10 @@
 								</div>
 								<fieldset>
 									<label for="amount" class="ul-amount-label">Amount: </label>
-									<input type="range" id="ca-amount-slider" name="ca-amount-slider" step="1000" min="5000" max="50000" value="20000">
+									<input type="range" id="ca-amount-slider" name="ca-amount-slider" step="1000" min="5000" max="50000" value="5000">
 									<br>
 									<label for="duration" class="ul-duration-label">Duration: </label>
-									<input type="range" id="ca-duration-slider" name="ca-duration-slider" min="30" step="30" max="90" value="60">
+									<input type="range" id="ca-duration-slider" name="ca-duration-slider" min="30" step="30" max="90" value="30">
 								</fieldset>
 							</div>
 						</div>
@@ -179,27 +180,27 @@
 							<div class="col-md-3 col-md-offset-2">
 								<div class="finance-information">
 									<ul>
-										<li>
+										<li class="ul-rate">
 											<p>MONTHLY RATE</p>
 											<h1>1.5%</h1>
 										</li>
 									</ul>
 									<ul>
-										<li>
+										<li class="ul-interest">
 											<p>TOTAL INTEREST</p>
-											<h1>£1,800</h1>
+											<h1>£<span>1,800</span></h1>
 										</li>
 									</ul>
 									<ul>
-										<li>
+										<li class="ul-payments">
 											<p>3 MONTHLY PAYMENTS OF</p>
-											<h1>£13,933.33</h1>
+											<h1>£<span>13,933.33</span></h1>
 										</li>
 									</ul>
 									<ul>
-										<li>
+										<li class="ul-total-repayments">
 											<p>TOTAL TO REPAY</p>
-											<h1>£41,800</h1>
+											<h1>£<span>41,800</span></h1>
 										</li>
 									</ul>
 								</div>
@@ -208,27 +209,27 @@
 							<div class="col-md-3">
 								<div class="finance-information">
 									<ul>
-										<li>
-											<p>90-DAY RATE</p>
-											<h1>4.5%</h1>
+										<li class="ca-rate">
+											<p><span>90</span>-DAY RATE</p>
+											<h1><span>4.5</span>%</h1>
 										</li>
 									</ul>
 									<ul>
-										<li>
+										<li class="ca-interest">
 											<p>TOTAL INTEREST</p>
-											<h1>£1,800</h1>
+											<h1>£<span>1,800</span></h1>
 										</li>
 									</ul>
 									<ul>
-										<li>
+										<li class="ca-payments">
 											<p>MONTHLY PAYMENTS OF</p>
-											<h1>£0</h1>
+											<h1>£<span>0</span></h1>
 										</li>
 									</ul>
 									<ul>
-										<li>
+										<li class="ca-total-repayments">
 											<p>ONE REPAYMENT OF</p>
-											<h1>£41,800</h1>
+											<h1>£<span>41,800</span></h1>
 										</li>
 									</ul>
 								</div>
@@ -237,13 +238,13 @@
 						<div class="row">
 							<div class="col-md-3 col-md-offset-2">
 								<div class="quote-cta">
-									<a class="btn btn--brand-primary btn--caps btn--btn-md btn--min-width instant-quote-cta btn--product-cta" title="INSTANT QUOTE" href="results.html">INSTANT QUOTE</a>
+									<a class="btn btn--brand-primary btn--caps btn--btn-md btn--min-width instant-quote-cta btn--product-cta" id="ul-instant-quote-cta" title="INSTANT QUOTE" href="results.html">INSTANT QUOTE</a>
 								</div>
 
 							</div>
 							<div class="col-md-3 col-md-offset-2">
 								<div class="quote-cta">
-									<a class="btn btn--brand-primary btn--caps btn--btn-md btn--min-width instant-quote-cta btn--product-cta" title="INSTANT QUOTE" href="results.html">INSTANT QUOTE</a>
+									<a class="btn btn--brand-primary btn--caps btn--btn-md btn--min-width instant-quote-cta btn--product-cta" id="ca-instant-quote-cta" title="INSTANT QUOTE" href="results.html">INSTANT QUOTE</a>
 								</div>
 							</div>
 						</div>

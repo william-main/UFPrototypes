@@ -10,11 +10,6 @@
 	text-align: left;
 }
 
-.table span {
-	float: left;
-	padding-right: 20px;
-}
-
 .table .quote-section {
     background-color: #dfe1df;
 }
@@ -89,5 +84,9 @@
 
 .quote-cta-section a {
 	margin-left: 20px;
+}
+
+td.original-quote, td.compare-section, th.original-quote {
+    display: none;
 }
 
